@@ -445,7 +445,6 @@
   <meta name="author" content="Mr Abhishek Pramanick Queen’s University Belfast">
   <meta name="author" content="Dr Fearghal Kearney Queen’s University Belfast">
   <meta name="author" content="Professor Jesus Martinez Del Rincon Queen’s University Belfast">
-  <meta name="author" content="Industry partner: Funds Axis Ltd">
   <meta name="dcterms.date" content="2025-11-01">
   <title>UKFin+: Can We Trust AI to Automate Regulatory Compliance?</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1101,11 +1100,6 @@ Dr Fearghal Kearney<br><span style="display:block;font-size:0.65em;color:#5a7fa3
 Professor Jesus Martinez Del Rincon<br><span style="display:block;font-size:0.65em;color:#5a7fa3;margin-top:0.2em;font-weight:400;">Queen’s University Belfast</span> 
 </div>
 </div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-<span style="font-size:0.8em;font-weight:400;color:#444;">Industry partner: Funds Axis Ltd</span> 
-</div>
-</div>
 </div>
 
   <p class="date">2025-11-01</p>
@@ -1207,7 +1201,7 @@ display:block!important;
 <p><strong>[Pause, let questions register]</strong></p>
 <p>First: How accurate are different AI architectures? We tested symbolic knowledge graphs—systems with manually encoded rules and explicit semantics—versus neural language models that learn patterns from data, versus hybrid approaches that combine both. Second: Can AI systems tell when they’re wrong? Do confidence scores actually correlate with correctness? This is critical for deployment—if we’re going to route cases based on confidence, we need to know whether that’s safe. Third: Which regulations can we safely automate? Where does human professional judgement remain essential? At this stage, we are careful to frame this as a rigorous evaluation within a specific sub-domain rather than a universal statement about all regulatory compliance.</p>
 <p><strong>[Point to test details]</strong></p>
-<p>We tested six distinct AI architectures on a specific regulatory sub-domain—investment fund classification. Around 190 European Fund Classification (EFC) rules from European fund category brochures are manually encoded into our GraphDB knowledge base and used as the shared corpus for GraphRAG/Logic-LM. Within that domain, we define a canonical test set of 36 EFC rules that are held out as our evaluation subset and are never used to build or query the KB. In ongoing work, we also use 47 UK investment-fund rules from an analogous regulatory rulebook to test robustness—asking how well these architectures transfer within the same domain but across jurisdictions. This isn’t simplified laboratory text—it’s real regulatory complexity: ambiguity, cross-references, professional standards. Computational law scholars recognise that legal and regulatory text exhibits distinctive properties—specialised vocabulary, formal syntax, pervasive ambiguity—that resist straightforward automation <span class="citation" data-cites="nllp2024workshop regnlp2025workshop">(<a href="#/backup-model-architectures" role="doc-biblioref" onclick>NLLP Organizing Committee 2024</a>; <a href="#/backup-model-architectures" role="doc-biblioref" onclick>RegNLP Organizing Committee 2025</a>)</span>. Our evaluation tests whether AI can handle these challenges, in line with calls for rigorous, real-system evaluation in AI and Law <span class="citation" data-cites="bex2024ai icail2023proceedings evaluation2013icail">(<a href="#/backup-model-architectures" role="doc-biblioref" onclick>Bex 2024</a>; <a href="#/backup-model-architectures" role="doc-biblioref" onclick>Grabmair, Andrade, and Novais 2023</a>; <a href="#/backup-model-architectures" role="doc-biblioref" onclick>[Authors] 2013</a>)</span>. We do not claim that this single corpus covers all of regulatory compliance—rather, it provides a high-quality testbed where behaviour can be studied carefully before extending to other domains.</p>
+<p>We tested six distinct AI architectures on a specific regulatory sub-domain—investment fund classification. Around 190 European Fund Classification (EFC) rules from European fund category brochures are manually encoded into our GraphDB knowledge base and used as the shared corpus for GraphRAG/Logic-LM. Within that domain, we define a canonical test set of 36 EFC rules that are held out as our evaluation subset and are never used to build or query the KB. In ongoing work, we also use 47 UK investment-fund rules from an analogous regulatory rulebook to test robustness—asking how well these architectures transfer within the same domain but across jurisdictions. This isn’t simplified laboratory text—it’s real regulatory complexity: ambiguity, cross-references, professional standards. Computational law scholars recognise that legal and regulatory text exhibits distinctive properties—specialised vocabulary, formal syntax, pervasive ambiguity—that resist straightforward automation <span class="citation" data-cites="nllp2024workshop regnlp2025workshop">(<a href="#/backup-model-architectures" role="doc-biblioref" onclick>NLLP Organizing Committee 2024</a>; <a href="#/backup-model-architectures" role="doc-biblioref" onclick>RegNLP Organizing Committee 2025</a>)</span>. Our evaluation tests whether AI can handle these challenges, in line with calls for rigorous, real-system evaluation in AI and Law <span class="citation" data-cites="bex2024ai icail2023proceedings evaluation2013icail">(<a href="#/backup-model-architectures" role="doc-biblioref" onclick>Bex 2024</a>; <a href="#/backup-model-architectures" role="doc-biblioref" onclick>Grabmair, Andrade, and Novais 2023</a>; <a href="#/backup-model-architectures" role="doc-biblioref" onclick>Zeleznikow and Conrad 2013</a>)</span>. We do not claim that this single corpus covers all of regulatory compliance—rather, it provides a high-quality testbed where behaviour can be studied carefully before extending to other domains.</p>
 <p><strong>[Transition]</strong></p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
@@ -1223,10 +1217,9 @@ display:block!important;
 </section>
 <section id="finding-1-structural-landscape-trade-offs" class="slide level2 smaller">
 <h2>Finding #1 – Structural Landscape &amp; Trade-Offs</h2>
-<h3 id="traditional-knowledge-graphs-vs-modern-ai-structural-comparison">Traditional Knowledge Graphs vs Modern AI: Structural Comparison</h3>
 <p>Recent computational legal studies distinguish between <strong>“law-as-code”</strong> (formal symbolic representations) and <strong>“law-as-data”</strong> (statistical pattern learning).</p>
 <h3 id="the-architectural-landscape">The Architectural Landscape</h3>
-<iframe role="img" src="data:text/html,%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF%2D8%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice%2Dwidth%2C%20initial%2Dscale%3D1%2E0%22%3E%0A%20%20%20%20%3Ctitle%3EArchitectural%20Spectrum%3C%2Ftitle%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20body%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dfamily%3A%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20transparent%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Earchitecture%2Dspectrum%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20max%2Dwidth%3A%201400px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%20auto%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%2016px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dbar%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify%2Dcontent%3A%20space%2Dbetween%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20linear%2Dgradient%28to%20right%2C%20%23e3f2fd%200%25%2C%20%23f3e5f5%2050%25%2C%20%23fff3e0%20100%25%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%2012px%2012px%200%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E1em%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text%2Dalign%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%2Eleft%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%231565c0%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%2Ecenter%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%236a1b9a%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%2Eright%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23e65100%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystems%2Drow%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify%2Dcontent%3A%20space%2Daround%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20gap%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23f9f9f9%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20flex%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%203px%20solid%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20white%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text%2Dalign%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20transform%200%2E2s%2C%20box%2Dshadow%200%2E2s%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%28%2D5px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%208px%2016px%20rgba%280%2C%200%2C%200%2C%200%2E15%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%2Esymbolic%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dcolor%3A%20%232196f3%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%204px%208px%20rgba%2833%2C%20150%2C%20243%2C%200%2E3%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%2Ehybrid%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dcolor%3A%20%239c27b0%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%204px%208px%20rgba%28156%2C%2039%2C%20176%2C%200%2E3%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%2Eneural%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dcolor%3A%20%23ff9800%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%204px%208px%20rgba%28255%2C%20152%2C%200%2C%200%2E3%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20h4%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%200%201rem%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E4em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Emetric%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%2E4rem%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%206px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E05em%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Emetric%2Egood%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23c8e6c9%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%232e7d32%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Emetric%2Ebad%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23ffcdd2%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23c62828%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Eproperties%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%2Dtop%3A%201rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%2Dtop%3A%201rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dtop%3A%202px%20solid%20%23ddd%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%200%2E95em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20line%2Dheight%3A%201%2E6%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23666%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Efinding%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%2Dtop%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23c8e6c9%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%203px%20solid%20%234caf50%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%200%200%2012px%2012px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text%2Dalign%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E2em%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Efinding%2Dbox%20strong%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E3em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%232e7d32%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%2Dbottom%3A%200%2E5rem%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%40media%20%28max%2Dwidth%3A%201200px%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2Esystems%2Drow%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flex%2Dwrap%3A%20wrap%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flex%3A%201%201%2045%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%40media%20%28max%2Dwidth%3A%20768px%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flex%3A%201%201%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%20%20%20%3Cdiv%20class%3D%22architecture%2Dspectrum%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dbar%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dlabel%20left%22%3ELAW%2DAS%2DCODE%3Cbr%2F%3E%28Symbolic%29%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dlabel%20center%22%3EHYBRID%3Cbr%2F%3E%28Combined%29%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dlabel%20right%22%3ELAW%2DAS%2DDATA%3Cbr%2F%3E%28Neural%29%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22systems%2Drow%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20GraphDB%20%28Symbolic%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20symbolic%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EGraphDB%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%2088%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%2094%25%20Lexical%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%2010%20months%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Manual%20Encoding%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Explicit%20Ontology%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20High%20Setup%20Cost%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Transparent%20Reasoning%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20GraphRAG%20%28Hybrid%20Retrieval%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20hybrid%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EGraphRAG%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E72%E2%80%9374%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%20r%20%E2%89%88%20%2D0%2E47%20to%20%2D0%2E50%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Retrieval%20%2B%20Generation%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Strong%20Structure%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Worse%20Calibration%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Logic%2DLM%20%28Hybrid%20Logic%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20hybrid%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3ELogic%2DLM%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E73%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20r%20%E2%89%88%20%2B0%2E14%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Generation%20%2B%20Validation%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Better%20Calibration%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Extra%20Cost%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Ambiguity%2DAware%20Model%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20hybrid%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EAmbiguity%2DAware%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E74%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%20r%20%E2%89%88%20%2D0%2E35%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20GraphRAG%20%2B%20Routing%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Measures%20Ambiguity%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Robust%20Deployment%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Few%2DShot%20LLM%20%28Neural%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20neural%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EFew%2DShot%20LLM%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E74%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%202%E2%80%934%25%20Lexical%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%202%20days%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Learned%20Patterns%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Flexible%20Structure%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Low%20Setup%20Cost%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Requires%20Canonicalization%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Chain%2Dof%2DThought%20%28Neural%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20neural%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EChain%2Dof%2DThought%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%20%7E54%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20r%20%E2%89%88%20%2B0%2E19%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Reasoning%20Steps%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Best%20Calibration%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Lower%20Structural%20Accuracy%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22finding%2Dbox%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cstrong%3EOUR%20FINDING%3A%20SYMBOLIC%20LEADS%20%28%E2%89%8888%25%29%3B%20AI%20APPROACHES%20%E2%89%8872%E2%80%9374%25%3C%2Fstrong%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20No%20simple%20%27AI%20wins%27%20story%E2%80%94choice%20depends%20on%20operational%20context%20and%20trade%2Doffs%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A%0A" width="100%" height="550px" frameborder="0" style="background:transparent; border:none;">
+<iframe role="img" src="data:text/html,%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF%2D8%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice%2Dwidth%2C%20initial%2Dscale%3D1%2E0%22%3E%0A%20%20%20%20%3Ctitle%3EArchitectural%20Spectrum%3C%2Ftitle%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20body%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dfamily%3A%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20transparent%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Earchitecture%2Dspectrum%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20max%2Dwidth%3A%201400px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%20auto%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%2016px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dbar%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify%2Dcontent%3A%20space%2Dbetween%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20linear%2Dgradient%28to%20right%2C%20%23e3f2fd%200%25%2C%20%23f3e5f5%2050%25%2C%20%23fff3e0%20100%25%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%2012px%2012px%200%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E1em%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text%2Dalign%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%2Eleft%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%231565c0%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%2Ecenter%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%236a1b9a%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Espectrum%2Dlabel%2Eright%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23e65100%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystems%2Drow%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify%2Dcontent%3A%20space%2Daround%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20gap%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23f9f9f9%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20flex%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%203px%20solid%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20white%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text%2Dalign%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20transform%200%2E2s%2C%20box%2Dshadow%200%2E2s%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%28%2D5px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%208px%2016px%20rgba%280%2C%200%2C%200%2C%200%2E15%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%2Esymbolic%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dcolor%3A%20%232196f3%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%204px%208px%20rgba%2833%2C%20150%2C%20243%2C%200%2E3%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%2Ehybrid%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dcolor%3A%20%239c27b0%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%204px%208px%20rgba%28156%2C%2039%2C%20176%2C%200%2E3%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%2Eneural%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dcolor%3A%20%23ff9800%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box%2Dshadow%3A%200%204px%208px%20rgba%28255%2C%20152%2C%200%2C%200%2E3%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20h4%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%200%201rem%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E4em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Emetric%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%2E4rem%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%206px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E05em%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Emetric%2Egood%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23c8e6c9%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%232e7d32%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Emetric%2Ebad%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23ffcdd2%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23c62828%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Eproperties%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%2Dtop%3A%201rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%2Dtop%3A%201rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dtop%3A%202px%20solid%20%23ddd%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%200%2E95em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20line%2Dheight%3A%201%2E6%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23666%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Efinding%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%2Dtop%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%201%2E5rem%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23c8e6c9%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%203px%20solid%20%234caf50%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%2Dradius%3A%200%200%2012px%2012px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text%2Dalign%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E2em%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2Efinding%2Dbox%20strong%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font%2Dsize%3A%201%2E3em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%232e7d32%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%2Dbottom%3A%200%2E5rem%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%40media%20%28max%2Dwidth%3A%201200px%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2Esystems%2Drow%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flex%2Dwrap%3A%20wrap%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flex%3A%201%201%2045%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%40media%20%28max%2Dwidth%3A%20768px%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2Esystem%2Dbox%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flex%3A%201%201%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%20%20%20%3Cdiv%20class%3D%22architecture%2Dspectrum%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dbar%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dlabel%20left%22%3ELAW%2DAS%2DCODE%3Cbr%2F%3E%28Symbolic%29%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dlabel%20center%22%3EHYBRID%3Cbr%2F%3E%28Combined%29%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22spectrum%2Dlabel%20right%22%3ELAW%2DAS%2DDATA%3Cbr%2F%3E%28Neural%29%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22systems%2Drow%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20GraphDB%20%28Symbolic%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20symbolic%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EGraphDB%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%2088%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%2094%25%20Lexical%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%2010%20months%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Manual%20Encoding%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Explicit%20Ontology%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20High%20Setup%20Cost%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Transparent%20Reasoning%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20GraphRAG%20%28Hybrid%20Retrieval%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20hybrid%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EGraphRAG%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E72%E2%80%9374%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%20r%20%E2%89%88%20%2D0%2E47%20to%20%2D0%2E50%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Retrieval%20%2B%20Generation%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Strong%20Structure%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Worse%20Calibration%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Logic%2DLM%20%28Hybrid%20Logic%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20hybrid%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3ELogic%2DLM%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E73%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20r%20%E2%89%88%20%2B0%2E14%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Generation%20%2B%20Validation%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Better%20Calibration%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Extra%20Cost%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Constrained%20%28Schema%2DEnforced%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20hybrid%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EConstrained%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E72%E2%80%9374%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%20r%20%E2%89%88%20%2D0%2E35%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Schema%2DConstrained%20Decoding%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Fixes%20Lexical%20Drift%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Still%20Inverse%20Calibration%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Ambiguity%2DAware%20Model%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20hybrid%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EAmbiguity%2DAware%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E74%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%20r%20%E2%89%88%20%2D0%2E35%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20GraphRAG%20%2B%20Routing%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Measures%20Ambiguity%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Robust%20Deployment%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Few%2DShot%20LLM%20%28Neural%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20neural%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EFew%2DShot%20LLM%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20%7E74%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%202%E2%80%934%25%20Lexical%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%202%20days%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Learned%20Patterns%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Flexible%20Structure%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Low%20Setup%20Cost%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Requires%20Canonicalization%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21%2D%2D%20Chain%2Dof%2DThought%20%28Neural%29%20%2D%2D%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22system%2Dbox%20neural%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch4%3EChain%2Dof%2DThought%3C%2Fh4%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20bad%22%3E%E2%9C%97%20%7E54%25%20GED%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22metric%20good%22%3E%E2%9C%93%20r%20%E2%89%88%20%2B0%2E19%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22properties%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Reasoning%20Steps%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Best%20Calibration%3Cbr%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Lower%20Structural%20Accuracy%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22finding%2Dbox%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cstrong%3EOUR%20FINDING%3A%20SYMBOLIC%20LEADS%20%28%E2%89%8888%25%29%3B%20AI%20APPROACHES%20%E2%89%8872%E2%80%9374%25%3C%2Fstrong%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20No%20simple%20%27AI%20wins%27%20story%E2%80%94choice%20depends%20on%20operational%20context%20and%20trade%2Doffs%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A%0A" width="100%" height="550px" frameborder="0" style="background:transparent; border:none;">
 </iframe>
 <div class="fragment">
 <div style="margin-top:0.75em;padding:0.75em 1em;border-radius:6px;background:#e6f4ea;color:#145a32;font-weight:500;">
@@ -1241,29 +1234,29 @@ display:block!important;
 <h3 id="graphdb-symbolic">GraphDB (Symbolic)</h3>
 <p><strong>Strengths:</strong></p>
 <ul>
-<li>✅ Perfect terminology (94% lexical consistency)</li>
-<li>✅ Explicit constraint representation</li>
-<li>✅ Transparent reasoning</li>
+<li>High lexical consistency (94% lexical consistency)</li>
+<li>Explicit constraint representation</li>
+<li>Transparent reasoning</li>
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
-<li>❌ ~190 manually encoded rules</li>
-<li>❌ 10 months expert effort</li>
-<li>❌ Expensive to extend</li>
+<li>Requires ~190 manually encoded rules</li>
+<li>Around 10 months expert effort</li>
+<li>Expensive to extend</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="llms-neural">LLMs (Neural)</h3>
 <p><strong>Strengths:</strong></p>
 <ul>
-<li>✅ Zero manual encoding</li>
-<li>✅ 2 days implementation</li>
-<li>✅ Flexible coverage</li>
+<li>No manual encoding required</li>
+<li>Fast implementation (≈2 days)</li>
+<li>Flexible coverage</li>
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
-<li>❌ Severe lexical drift (2-4% consistency—uses different terminology)</li>
-<li>❌ Requires canonicalisation (post-processing to align terms)</li>
-<li>❌ Black-box reasoning</li>
+<li>Severe lexical drift (2-4% consistency—uses different terminology)</li>
+<li>Requires canonicalisation (post-processing to align terms)</li>
+<li>Opaque internal reasoning</li>
 </ul>
 </div></div>
 <div class="fragment">
@@ -1281,11 +1274,15 @@ display:block!important;
 <aside class="notes">
 <p>First major finding—and it’s a surprise. Recent computational legal studies distinguish between ‘law-as-code’—formal, executable representations of legal rules—and ‘law-as-data’—statistical pattern learning over large corpora <span class="citation" data-cites="chau2024computational surden2019artificial">(<a href="#/backup-model-architectures" role="doc-biblioref" onclick>Chau and Livermore 2024</a>; <a href="#/backup-model-architectures" role="doc-biblioref" onclick>Surden 2019</a>)</span>. We tested both paradigms on identical regulatory text, building on work that uses legal knowledge graphs for structured reasoning <span class="citation" data-cites="kondo2025capturing">(<a href="#/backup-model-architectures" role="doc-biblioref" onclick>Kondo et al. 2025</a>)</span> while also engaging with the Natural Legal Language Processing literature <span class="citation" data-cites="nllp2024workshop">(<a href="#/backup-model-architectures" role="doc-biblioref" onclick>NLLP Organizing Committee 2024</a>)</span>.</p>
 <p><strong>[Point to architectural spectrum diagram]</strong></p>
-<p>The architectural landscape shows four systems spanning this spectrum. On the left, GraphDB represents law-as-code: 190 manually encoded rules, 10 months of expert effort, but perfect terminology alignment. On the right, Few-Shot LLM represents law-as-data: zero manual encoding, 2 days implementation, but severe lexical drift. In the middle, hybrid approaches like GraphRAG and Logic-LM try to combine both.</p>
+<p>The architectural landscape shows six systems spanning this spectrum. On the left, GraphDB represents law-as-code: 190 manually encoded rules, 10 months of expert effort, but perfect terminology alignment. On the right, Few-Shot LLM represents law-as-data: zero manual encoding, 2 days implementation, but severe lexical drift. In the middle, hybrid approaches like GraphRAG and Logic-LM try to combine both.</p>
 <p><strong>[Pause for effect]</strong></p>
 <p>The surprise: although GraphDB remains structurally strongest (≈88% GED similarity), the best neural and hybrid architectures reach ≈72–74% structural similarity—closer than many would anticipate—measured by graph edit distance (how similar the extracted regulatory logic structure is to ground truth), which assesses whether systems correctly capture regulatory dependencies and relationships. They get there through entirely different mechanisms with complementary failure modes.</p>
 <p><strong>[Point to trade-offs]</strong></p>
 <p>Symbolic systems front-load effort through manual encoding—expensive setup but clean outputs. Neural systems defer effort through post-processing—cheap setup but requires canonicalisation. Neither dominates. Computational legal studies researchers have been calling for exactly this kind of fair comparison across paradigms, but rarely has anyone evaluated both on identical tasks with unified metrics—this is the first systematic evidence, on real regulatory text, of how symbolic and neural approaches differ structurally and where AI architectures begin to approach knowledge-graph performance.</p>
+<p><strong>[If asked about the scores]</strong></p>
+<p>Graph edit distance is essentially a structural similarity score: 100% would mean the extracted graph is structurally identical to the gold regulatory logic, whilst 0% would mean no overlap. So GraphDB at roughly 88% means that, after normalising identifiers, nearly all of the dependencies and constraint structure match the expert-encoded ground truth; the neural and hybrid systems at 72–74% are notably lower, but still far above chance, and importantly they get there with orders of magnitude less manual effort.</p>
+<p>Lexical consistency is a simpler measure: it tells us how often the system uses exactly the same terminology as the gold standard. GraphDB at ~94% lexical consistency means almost every predicate and label matches the canonical vocabulary; the few-shot LLM at ~2–4% shows severe lexical drift—it often invents or rephrases terms—which then has to be tidied up through canonicalisation.</p>
+<p>From an economic perspective, you can read these numbers as shifting where you spend money. High structural and lexical alignment (GraphDB) means higher upfront knowledge-engineering cost but fewer downstream surprises—less rework, less manual debugging, and easier audit. Lower alignment but rapid development (LLMs and hybrids) means you save on initial build but pay later in post-processing, exception handling, and regulatory risk management. The “right” architecture depends on whether you are more resource-constrained on expert time now or on operational oversight later.</p>
 <p><strong>[If asked about technical architectures]</strong></p>
 <ul>
 <li><strong>GraphDB (Symbolic):</strong> Manually encoded RDF graphs for ~190 European fund classification rules; SPARQL queries over a fixed ontology; no learning, purely rule-based retrieval and reasoning.</li>
@@ -1293,6 +1290,7 @@ display:block!important;
 <li><strong>GraphRAG (k=10 / k=50):</strong> Retrieval-augmented generation: embed rule text + SPARQL patterns, retrieve top-K similar EFC graphs from GraphDB, then feed those graphs plus the query text into the LLM to generate a new RDF graph.</li>
 <li><strong>Logic-LM (Hybrid):</strong> Two-stage pipeline: LLM proposes an RDF graph, then a logical validator checks constraints (e.g. percentage sums, category consistency); failed checks trigger repair or downgrade of reliability.</li>
 <li><strong>Constrained Generation (Symbolic-Neural):</strong> LLM decoding constrained by a schema/template for allowed predicates, node types, and constraint slots—reduces format errors but does not perform full logical validation.</li>
+<li><strong>Chain-of-Thought (Neural):</strong> LLM is prompted to reason step-by-step (identify subject, predicate, object, constraints) before emitting RDF; this improves calibration and explainability but comes with extra cost and somewhat lower structural accuracy.</li>
 <li><strong>Ambiguity-Aware Model:</strong> Same GraphRAG extraction pipeline, but paired with a separate ambiguity-scoring module over the rule text; routing decisions (auto / hybrid / human) depend on ambiguity score rather than model-reported confidence.</li>
 </ul>
 <p><strong>[Transition]</strong></p>
@@ -1309,9 +1307,9 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="finding-2-the-confidence-trap" class="slide level2 smaller">
-<h2>Finding #2 – The Confidence Trap</h2>
-<h3 id="when-ai-is-most-confident-its-often-most-wrong">When AI Is Most Confident, It’s Often Most Wrong</h3>
+<section id="finding-2-confidence-and-miscalibration" class="slide level2 smaller">
+<h2>Finding #2 – Confidence and Miscalibration</h2>
+<h4 id="when-high-confidence-coincides-with-error">When high confidence coincides with error</h4>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1327,20 +1325,27 @@ display:block!important;
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Expected (Good Calibration):</strong></p>
-<p>High Confidence → High Accuracy ✅</p>
+<p>High Confidence → High Accuracy</p>
 <p>When model says “90% confident,” accuracy should be ~90%</p>
 </div><div class="column" style="width:50%;">
 <p><strong>Reality (Inverse Calibration):</strong></p>
-<p>High Confidence → <strong>Low Accuracy</strong> ❌</p>
+<p>High Confidence → <strong>Low Accuracy</strong></p>
 <p>When model says “90% confident,” accuracy is often <strong>worst</strong></p>
 </div></div>
 <div class="fragment">
 <p><strong>The Discovery: Negative Confidence-Accuracy Correlation</strong></p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 31%">
+<col style="width: 8%">
+<col style="width: 27%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Model Architecture</th>
-<th>Calibration (r)*</th>
+<th>Confidence–Accuracy Correlation (r)*</th>
+<th>ECE</th>
 <th>Interpretation</th>
 </tr>
 </thead>
@@ -1348,53 +1353,61 @@ display:block!important;
 <tr class="odd">
 <td>Few-Shot LLM</td>
 <td>-0.545</td>
-<td>🚨 <strong>INVERSE</strong></td>
+<td>0.341</td>
+<td>Inverse</td>
 </tr>
 <tr class="even">
 <td>GraphRAG (k=10)</td>
 <td>-0.469</td>
-<td>🚨 <strong>INVERSE</strong></td>
+<td>0.325</td>
+<td>Inverse</td>
 </tr>
 <tr class="odd">
 <td>GraphRAG (k=50)</td>
 <td>-0.500</td>
-<td>🚨 <strong>INVERSE</strong></td>
+<td>0.370</td>
+<td>Inverse</td>
 </tr>
 <tr class="even">
 <td>Constrained Generation</td>
 <td>-0.352</td>
-<td>🚨 <strong>INVERSE</strong></td>
+<td>0.345</td>
+<td>Inverse</td>
 </tr>
 <tr class="odd">
 <td>Logic-LM</td>
 <td>+0.135</td>
-<td>✅ Positive (weak)</td>
+<td>0.243</td>
+<td>Positive (weak)</td>
 </tr>
 <tr class="even">
 <td>Chain-of-Thought</td>
 <td>+0.190</td>
-<td>✅ Positive (weak)</td>
+<td>0.236</td>
+<td>Positive (weak)</td>
 </tr>
 </tbody>
 </table>
-<p>*Correlation coefficient: +1 = perfect calibration, 0 = no relationship, -1 = inverse calibration</p>
+</div>
+<div class="footer">
+
 </div>
 </section>
-<section id="the-deployment-disaster" class="slide level2 smaller">
-<h2>The Deployment Disaster</h2>
+<section id="risks-of-confidence-based-deployment" class="slide level2 smaller">
+<h2>Risks of Confidence-Based Deployment</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Naive confidence-based routing would:</strong></p>
 <ul>
-<li>✅ Automate the <strong>WORST</strong> predictions
+<li>Automatically process the least accurate predictions
 <ul>
-<li>Model is confident → must be right!</li>
+<li>Model is confident → assumed to be right</li>
 </ul></li>
-<li>❌ Flag <strong>CORRECT</strong> predictions for review
+<li>Flag many correct predictions for review
 <ul>
-<li>Model uncertain → better check!</li>
+<li>Model uncertain → sent for checking</li>
 </ul></li>
-<li>Result: Systematically route errors to automation</li>
+<li>Result: systematically routes more errors to automation</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
@@ -1406,9 +1419,9 @@ display:block!important;
 <p><strong>Rule:</strong> “Fund must allocate ≥80% to bonds, ≥30% to equities…”</p>
 <p><strong>Model Output:</strong></p>
 <ul>
-<li>Confidence: 95% 😊</li>
+<li>Confidence: 95%</li>
 <li>Accuracy: <strong>WRONG</strong> (80%+30%&gt;100%)</li>
-<li>Naive routing: <strong>AUTOMATE THIS!</strong> ☠️</li>
+<li>Naive routing: automate this case despite the inconsistency</li>
 </ul>
 </div>
 </div>
@@ -1421,7 +1434,7 @@ display:block!important;
 <p><strong>Key Insight</strong></p>
 </div>
 <div class="callout-content">
-<p>This is the <strong>first systematic characterisation</strong> of inverse calibration specifically in regulatory text extraction tasks. It has profound implications for safe deployment.</p>
+<p>This is the <strong>first systematic characterisation</strong> of inverse calibration specifically in regulatory text extraction tasks. It has important implications for responsible deployment.</p>
 </div>
 </div>
 </div>
@@ -1434,6 +1447,8 @@ display:block!important;
 <p>So we tested whether regulatory AI provides reliable confidence signals. What we expected to find—was positive correlation. When the model says ‘I’m 90% confident,’ accuracy should be around 90%. That’s what calibration means.</p>
 <p><strong>[PAUSE]</strong></p>
 <p>What we actually found—was the opposite. Inverse calibration. When confidence goes UP, accuracy goes DOWN.</p>
+<p>If I need to unpack the metric: here we’re using a simple calibration <strong>proxy</strong>—the Pearson (point-biserial) correlation coefficient (r) between the model’s reported confidence and whether it was actually correct across rules. An r close to +1 means higher confidence reliably goes with higher accuracy; r near 0 means confidence is uninformative; r well below 0 means the model is most confident precisely when it is most wrong—that’s inverse calibration. Full calibration in the strict sense (e.g. reliability curves, ECE, Brier scores) is future work; for the talk I’m just using r to show the <strong>direction</strong> of the confidence–accuracy relationship.</p>
+<p>If they ask specifically about ECE: that’s a standard scalar calibration error. We bin predictions by confidence (0–0.1, 0.1–0.2, …, 0.9–1.0), compute the average confidence and average accuracy in each bin, then take a weighted average of the absolute differences across bins. ECE = 0 means perfectly calibrated—on average, confidence matches accuracy in every bin; higher ECE means worse calibration. Here, even the “best” models sit around 0.23–0.24, and the worst around 0.35–0.37, which is substantial miscalibration.</p>
 <p><strong>[PAUSE FOR IMPACT]</strong></p>
 <p>Four out of six AI models exhibit NEGATIVE correlation between confidence and correctness. They are systematically most confident when most wrong.</p>
 <p><strong>[Point to data table]</strong></p>
@@ -1593,6 +1608,19 @@ display:block!important;
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>This three‑tier slide is the ambiguity‑aware model in practice. Rather than trusting the model’s confidence, we score the ambiguity of the rule text itself and use that to decide whether it goes to full automation, AI‑assisted review, or human‑only judgement. The thresholds (0.3 and 0.6) come from the empirical ambiguity distribution on our test rules and are tunable; the key idea is that we’re using measurable text properties, not broken confidence scores, to decide when AI is allowed to act autonomously.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="why-this-works" class="slide level2 smaller">
 <h2>Why This Works</h2>
@@ -1661,15 +1689,14 @@ display:block!important;
 <section id="impact-deployment" class="slide level2 smaller">
 <h2>Impact &amp; Deployment</h2>
 <h3 id="real-world-efficiency-gains-with-safety-maintained">Real-World Efficiency Gains With Safety Maintained</h3>
-<p><strong>Projected Performance (1,000 regulatory submissions):</strong></p>
+<p><strong>Projected Processing Mix (1,000 regulatory submissions):</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Tier</th>
-<th>Rules</th>
+<th>Share of Rules</th>
 <th>Processing</th>
-<th>Cost/Sub</th>
-<th>Human Effort</th>
+<th>Approx Cost/Sub</th>
 </tr>
 </thead>
 <tbody>
@@ -1677,39 +1704,24 @@ display:block!important;
 <td>Automatic</td>
 <td>40%</td>
 <td>AI only</td>
-<td>$1</td>
-<td>0%</td>
+<td>~$1</td>
 </tr>
 <tr class="even">
 <td>Hybrid</td>
 <td>20%</td>
 <td>AI + verification</td>
-<td>$50</td>
-<td>10-20 min</td>
+<td>~$50</td>
 </tr>
 <tr class="odd">
 <td>Human</td>
 <td>40%</td>
 <td>Expert review</td>
-<td>$200</td>
-<td>Full effort</td>
-</tr>
-<tr class="even">
-<td><strong>CURRENT</strong></td>
-<td><strong>100%</strong></td>
-<td><strong>Manual</strong></td>
-<td><strong>$300</strong></td>
-<td><strong>100%</strong></td>
-</tr>
-<tr class="odd">
-<td><strong>PROPOSED</strong></td>
-<td><strong>100%</strong></td>
-<td><strong>Graduated</strong></td>
-<td><strong>$110</strong></td>
-<td><strong>~40%</strong></td>
+<td>~$200</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Implied cost per submission:</strong><br>
+Current (all manual): <strong>~$300</strong> → Proposed (graduated mix): <strong>~$110</strong> (≈60% reduction).</p>
 <h3 class="smaller" id="cost-benefit-safety">Cost-Benefit &amp; Safety</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1753,9 +1765,8 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="what-makes-this-different" class="slide level2 smaller">
-<h2>What Makes This Different</h2>
-<h3 class="smaller" id="the-contributions">The Contributions</h3>
+<section id="our-contributions" class="slide level2 smaller">
+<h2>Our Contributions</h2>
 <div class="columns">
 <div class="column" style="width:33%;">
 <h3 id="empirical-discovery">EMPIRICAL DISCOVERY</h3>
@@ -1814,12 +1825,8 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="key-takeaways" class="slide level2 smaller">
-<h2>Key Takeaways</h2>
-<h3 id="three-essential-points-for-anyone-deploying-ai-in-compliance">Three Essential Points for Anyone Deploying AI in Compliance</h3>
-</section>
-<section id="the-three-takeaways" class="slide level2 smaller">
-<h2>The Three Takeaways</h2>
+<section id="our-three-takeaways" class="slide level2 smaller">
+<h2>Our Three Takeaways</h2>
 <h3 id="ai-cant-reliably-tell-when-its-wrong">1. 🚨 AI Can’t Reliably Tell When It’s Wrong</h3>
 <ul>
 <li class="fragment">4 of 6 architectures inversely calibrated (r &lt; -0.35)</li>
@@ -1907,6 +1914,7 @@ b.quinn@ulster.ac.uk</p>
 <li><strong>GraphRAG (k=10 / k=50):</strong> Retrieval-augmented generation: embed rule text + SPARQL patterns, retrieve top-K similar EFC graphs from GraphDB, then feed those graphs plus the query text into the LLM to generate a new RDF graph.</li>
 <li><strong>Logic-LM (Hybrid):</strong> Two-stage pipeline: LLM proposes an RDF graph, then a logical validator checks constraints (e.g. percentage sums, category consistency); failed checks trigger repair or downgrade of reliability.</li>
 <li><strong>Constrained Generation (Symbolic-Neural):</strong> LLM decoding constrained by a schema/template for allowed predicates, node types, and constraint slots—reduces format errors but does not perform full logical validation.</li>
+<li><strong>Chain-of-Thought (Neural):</strong> LLM is prompted to reason step-by-step (identify subject, predicate, object, constraints) before producing RDF; this improves calibration and explainability but comes with additional computational cost and somewhat lower structural accuracy.</li>
 <li><strong>Ambiguity-Aware Model:</strong> Same GraphRAG extraction pipeline, but paired with a separate ambiguity-scoring module over the rule text; routing decisions (auto / hybrid / human) depend on ambiguity score rather than model-reported confidence.</li>
 </ul>
 <h3 id="thank-you-for-your-attention">Thank you for your attention</h3>
@@ -1925,9 +1933,6 @@ display:block!important;
 }</style></aside>
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-evaluation2013icail" class="csl-entry" role="listitem">
-[Authors]. 2013. <span>“The Significance of Evaluation in AI and Law: A Case Study Re-Examining ICAIL Proceedings.”</span> In <em>Proceedings of ICAIL</em>.
-</div>
 <div id="ref-bex2024ai" class="csl-entry" role="listitem">
 Bex, Floris. 2024. <span>“AI, Law and Beyond: A Transdisciplinary Ecosystem for the Future of AI &amp; Law.”</span> <em>Artificial Intelligence and Law</em>, May. <a href="https://doi.org/10.1007/s10506-024-09404-y">https://doi.org/10.1007/s10506-024-09404-y</a>.
 </div>
@@ -1969,6 +1974,9 @@ RegNLP Organizing Committee. 2025. <span>“RegNLP 2025: Regulatory Natural Lang
 </div>
 <div id="ref-surden2019artificial" class="csl-entry" role="listitem">
 Surden, Harry. 2019. <span>“Artificial Intelligence and Law: An Overview.”</span> <em>Georgia State University Law Review</em> 35 (4): 1305–37. <a href="https://readingroom.law.gsu.edu/gsulr/vol35/iss4/8">https://readingroom.law.gsu.edu/gsulr/vol35/iss4/8</a>.
+</div>
+<div id="ref-evaluation2013icail" class="csl-entry" role="listitem">
+Zeleznikow, John, and Jack G. Conrad. 2013. <span>“The Significance of Evaluation in AI and Law: A Case Study Re-Examining ICAIL Proceedings.”</span> In <em>Proceedings of ICAIL</em>.
 </div>
 </div>
 </section>
