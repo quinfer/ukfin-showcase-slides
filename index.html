@@ -1132,7 +1132,7 @@ display:block!important;
 <p><strong>[Pause, let questions register]</strong></p>
 <p>First: How accurate are different AI architectures? We tested symbolic knowledge graphs—systems with manually encoded rules and explicit semantics—versus neural language models that learn patterns from data, versus hybrid approaches that combine both. Second: Can AI systems tell when they’re wrong? Do confidence scores actually correlate with correctness? This is critical for deployment—if we’re going to route cases based on confidence, we need to know whether that’s safe. Third: Which regulations can we safely automate? Where does human professional judgement remain essential? At this stage, we are careful to frame this as a rigorous evaluation within a specific sub-domain rather than a universal statement about all regulatory compliance.</p>
 <p><strong>[Point to test details]</strong></p>
-<p>We tested six distinct AI architectures on a specific regulatory sub-domain—investment fund classification. Around 190 European Fund Classification (EFC) rules from European fund category brochures are manually encoded into our GraphDB knowledge base and used as the shared corpus for GraphRAG/Logic-LM. Within that domain, we define a canonical test set of 36 EFC rules that are held out as our evaluation subset and are never used to build or query the KB. In ongoing work, we also use 47 UK investment-fund rules from an analogous regulatory rulebook to test robustness—asking how well these architectures transfer within the same domain but across jurisdictions. This isn’t simplified laboratory text—it’s real regulatory complexity: ambiguity, cross-references, professional standards. Computational law scholars recognise that legal and regulatory text exhibits distinctive properties—specialised vocabulary, formal syntax, pervasive ambiguity—that resist straightforward automation <span class="citation" data-cites="nllp2024workshop regnlp2025workshop">(<a href="#/references" role="doc-biblioref" onclick>NLLP Organizing Committee 2024</a>; <a href="#/references" role="doc-biblioref" onclick>RegNLP Organizing Committee 2025</a>)</span>. Our evaluation tests whether AI can handle these challenges, in line with calls for rigorous, real-system evaluation in AI and Law <span class="citation" data-cites="bex2024ai icail2023proceedings evaluation2013icail">(<a href="#/references" role="doc-biblioref" onclick>Bex 2024</a>; <a href="#/references" role="doc-biblioref" onclick>Grabmair, Andrade, and Novais 2023</a>; <a href="#/references" role="doc-biblioref" onclick>Zeleznikow and Conrad 2013</a>)</span>. We do not claim that this single corpus covers all of regulatory compliance—rather, it provides a high-quality testbed where behaviour can be studied carefully before extending to other domains.</p>
+<p>We tested six distinct AI architectures on a specific regulatory sub-domain—investment fund classification. Around 190 European Fund Classification (EFC) rules from European fund category brochures are manually encoded into our GraphDB knowledge base and used as the retrieval corpus for GraphRAG (Logic-LM does not use the KB corpus). Within that domain, we define a canonical test set of 36 EFC rules that are held out as our evaluation subset and are never used to build or query the KB. In ongoing work, we also use 47 UK investment-fund rules from an analogous regulatory rulebook to test robustness—asking how well these architectures transfer within the same domain but across jurisdictions. This isn’t simplified laboratory text—it’s real regulatory complexity: ambiguity, cross-references, professional standards. Computational law scholars recognise that legal and regulatory text exhibits distinctive properties—specialised vocabulary, formal syntax, pervasive ambiguity—that resist straightforward automation <span class="citation" data-cites="nllp2024workshop regnlp2025workshop">(<a href="#/references" role="doc-biblioref" onclick>NLLP Organizing Committee 2024</a>; <a href="#/references" role="doc-biblioref" onclick>RegNLP Organizing Committee 2025</a>)</span>. Our evaluation tests whether AI can handle these challenges, in line with calls for rigorous, real-system evaluation in AI and Law <span class="citation" data-cites="bex2024ai icail2023proceedings evaluation2013icail">(<a href="#/references" role="doc-biblioref" onclick>Bex 2024</a>; <a href="#/references" role="doc-biblioref" onclick>Grabmair, Andrade, and Novais 2023</a>; <a href="#/references" role="doc-biblioref" onclick>Zeleznikow and Conrad 2013</a>)</span>. We do not claim that this single corpus covers all of regulatory compliance—rather, it provides a high-quality testbed where behaviour can be studied carefully before extending to other domains.</p>
 <p><strong>[Transition]</strong></p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
@@ -1426,19 +1426,16 @@ display:block!important;
 <p><strong>Safety Properties</strong></p>
 </div>
 <div class="callout-content">
-<p>✅ High-risk ambiguous rules get human review<br>
-✅ Quality maintained through graduated oversight<br>
-✅ Transparent routing rationale<br>
-✅ Robust to calibration failures</p>
+<p>✅ High-risk ambiguous rules get human review ✅ Quality maintained through graduated oversight ✅ Transparent routing rationale ✅ Robust to calibration failures</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Meaningful efficiency gains—roughly 60% cost reduction—whilst maintaining safety. Let me show you what that means in practice.</p>
+<p>Meaningful efficiency gains—roughly 70% cost reduction—whilst maintaining safety. Let me show you what that means in practice.</p>
 <p><strong>[Point to table]</strong></p>
 <p>For 1,000 regulatory submissions, current manual processing costs about $300 per submission—that’s $300,000 total. With graduated automation, we automate the 40% that are purely quantitative—those cost $1 each. The 20% moderate-ambiguity cases get hybrid processing—AI drafts, human verifies—costing about $50 each. The 40% high-ambiguity cases stay fully manual at $200 each. Total: about $90,400—roughly 70% reduction.</p>
 <p><strong>[Point to cost-benefit]</strong></p>
-<p>For a mid-sized institution doing 10,000 regulatory checks annually, that’s roughly $1.9 million in projected savings per year. Across the UK financial sector with 1,000+ supervised firms, the efficiency potential is hundreds of millions annually—though this requires industry pilot validation.</p>
+<p>For a mid-sized institution doing 10,000 regulatory checks annually, that’s roughly $2.1 million in projected savings per year ($3M current cost minus $904K projected cost). Across the UK financial sector with 1,000+ supervised firms, the efficiency potential is hundreds of millions annually—though this requires industry pilot validation.</p>
 <p><strong>[Point to safety properties]</strong></p>
 <p>Critically, safety is maintained. High-risk ambiguous rules get human review. Quality is maintained through graduated oversight—we’re not replacing human judgement, we’re focusing it where it matters most. The routing rationale is transparent—based on measurable text properties—and the system is robust to the calibration failures we documented.</p>
 <p>Most legal AI research focuses on reporting accuracy metrics without addressing operational deployment—when to trust systems, how to integrate oversight, what happens when things go wrong—but we’ve translated rigorous empirical evaluation directly into operational guidance that practitioners can actually use, bridging what researchers call the ‘evaluation-to-deployment gap’ in high-stakes AI applications.</p>
@@ -1519,6 +1516,48 @@ b.quinn@ulster.ac.uk</p>
 </div></div>
 <aside class="notes">
 <p>Open for questions and discussion.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="backup-model-architectures" class="slide level2 smaller hidden">
+<h2>Backup: Model Architectures</h2>
+<h3 id="key-differences-logic-lm-vs-graphrag">Key Differences: Logic-LM vs GraphRAG</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>GraphRAG (Retrieval-Augmented):</strong></p>
+<ul>
+<li>Embeds rule text + SPARQL patterns</li>
+<li>Retrieves top-K similar graphs from GraphDB KB</li>
+<li>Feeds retrieved graphs + query to LLM</li>
+<li>Generates new RDF graph</li>
+<li><strong>Approach:</strong> Context enhancement through retrieval</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Logic-LM (Hybrid Validation):</strong></p>
+<ul>
+<li>LLM generates RDF graph directly (no KB retrieval)</li>
+<li>Uses few-shot examples in prompt (like Model 1)</li>
+<li>Logical validator checks constraints
+<ul>
+<li>Percentage sums</li>
+<li>Category consistency</li>
+</ul></li>
+<li>Failed checks trigger repair or downgrade</li>
+<li><strong>Approach:</strong> Post-generation validation (does NOT use GraphDB corpus)</li>
+</ul>
+</div></div>
+<p><strong>Key Difference:</strong> GraphRAG retrieves similar examples from GraphDB KB to enhance generation; Logic-LM generates directly (no KB retrieval) then validates for logical consistency.</p>
+<aside class="notes">
+<p>For Q&amp;A: GraphRAG uses retrieval-augmented generation—it pulls similar examples from the GraphDB knowledge base to provide context. Logic-LM does NOT retrieve from GraphDB—it generates directly from the LLM (using few-shot examples in the prompt), then validates the output for logical consistency using a symbolic validator. Both are hybrid approaches but Logic-LM doesn’t use the KB corpus.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
