@@ -4091,9 +4091,14 @@ flowchart TD
 </div>
 </div>
 </div>
-<p><strong>Scores reported</strong> - <strong>GED:</strong> structure match<br>
-- <strong>Lexical:</strong> terminology match<br>
-- <strong>Calibration:</strong> confidence vs correctness</p>
+<p><strong>Scores reported</strong></p>
+<ul>
+<li><strong>GED:</strong> structure match<br>
+</li>
+<li><strong>Lexical:</strong> terminology match<br>
+</li>
+<li><strong>Calibration:</strong> confidence vs correctness</li>
+</ul>
 </div></div>
 <aside class="notes">
 <p>Before we show results, here is the system architecture and evaluation pipeline in plain English. Every architecture receives the same input: a held-out regulatory rule sentence. Each outputs a structured graph representation of the rule (triples plus constraints). We then canonicalise representations so that semantically equivalent outputs are not penalised just for naming differences. Finally, we score every output against the gold expert-encoded graph using shared metrics: GED for structure, lexical consistency for terminology, and calibration for whether confidence aligns with correctness.</p>
